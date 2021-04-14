@@ -223,6 +223,8 @@ def generate_vector_gradient(seed, x, y, remember=True):
                  Vector2(-0.707, 0.707),
                  Vector2(0.707, -0.707),
                  Vector2(-0.707, -0.707)]
+    if len(VGCACHE) >= 100:
+        VGCACHE.clear()
     if (seed, x, y) in VGCACHE:
         return VGCACHE[(seed, x, y)]
     else:

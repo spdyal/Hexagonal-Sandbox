@@ -450,8 +450,8 @@ class Chunk():
                               Vector2(gx / 42, (gy + 0.5 * (gx % 2)) / 42))
                 mineral_distribution = perlin(self.world.seed * 8,
                               Vector2(gx / 128, (gy + 0.5 * (gx % 2)) / 128))
-                cave_pocket += ((gy - 550) * 0.001) if gy <= 550 else (gy - 550) * 0.000025
-                cave_tunnel += ((gy - 550) * 0.001) if gy <= 550 else (gy - 550) * 0.000025
+                cave_pocket += ((gy - 350) * 0.001) if gy <= 350 else (gy - 350) * 0.000025
+                cave_tunnel += ((gy - 350) * 0.001) if gy <= 350 else (gy - 350) * 0.000025
                 
                 if level - 0.5 * (gx % 2) + level + 30 <= gy:
                     self.tiles[y][x] = Tile(self, STONE, SOLID)
@@ -1075,6 +1075,8 @@ if __name__ == '__main__':
                         (50, 220))
             screen.blit(font.render(f'Textures Loaded: {len(TEXTURE_CACHE)}', True, pygame.Color('white')),
                         (50, 260))
+            screen.blit(font.render(f'VGC: {len(VGCACHE)}', True, pygame.Color('white')),
+                        (50, 300))
 
         # Завершение кадра
         pygame.display.flip()
