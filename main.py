@@ -976,6 +976,9 @@ class Button(pygame.sprite.Sprite):
 
 
 if __name__ == '__main__':
+    if not os.path.exists('saves/'):
+        os.makedirs('saves/')
+    
     # Инициализация Pygame, окна и шрифта
     pygame.init()
     screen = pygame.display.set_mode((2000, 1200), pygame.RESIZABLE)
